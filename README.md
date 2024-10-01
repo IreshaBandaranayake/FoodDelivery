@@ -1,2 +1,2 @@
 # FoodDelivery
-Full Stack Food Delivery Website
+Full Stack Food Ordeing Website
