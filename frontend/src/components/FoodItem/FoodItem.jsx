@@ -16,7 +16,6 @@ const FoodItem = ({id,name,price,description,image}) => {
                     <img onClick={()=>setItemCount(prev=>prev-1)} src={assets.remove_icon_red} alt=''/>
                     <p>{itemCount}</p>
                     <img onClick={()=>setItemCount(prev=>prev+1)} src={assets.add_icon_green} alt=''/>
-
                 </div>
             }
         </div>
