@@ -44,10 +44,86 @@
     .footer-content{
         display:flex;
         flex-direction: column;
+        align-items: center; /* new  */
         gap: 35px;
     }
-    .footer-copyright{
+    /* .footer-copyright{
         text-align: center;
+    } */
+    .footer-content-left,
+    .footer-content-center,
+    .footer-content-right {
+        align-items: center;
+        text-align: center;
+        width: 100%; /* Ensure it fits within the viewport */
+    }
+
+    .footer-content-right {
+        overflow: hidden; /* Prevent overflow */
+        word-wrap: break-word; /* Break long content */
+    }
+
+    .footer-social-icons img {
+        width: 30px;
+        margin-right: 10px;
     }
 }
-    
+@media (max-width: 550px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 25px; /* Reduce the gap for smaller screens */
+    }
+
+    .footer-content-left,
+    .footer-content-center,
+    .footer-content-right {
+        width: 100%; /* Ensure sections stack properly */
+        align-items: center; /* Center align */
+        text-align: center; /* Center text */
+        gap: 20px; /* Add spacing between items */
+    }
+
+    .footer-social-icons img {
+        width: 25px; /* Reduce icon size */
+        margin-right: 8px;
+    }
+
+    .footer hr {
+        margin: 10px 0; /* Adjust margin for compact spacing */
+    }
+
+    .footer-content h2 {
+        font-size: 16px; /* Adjust heading size */
+    }
+
+    .footer-content li {
+        font-size: 14px; /* Adjust font size */
+        word-break: break-word; /* Handle long words gracefully */
+    }
+}
+
+@media (max-width: 450px) {
+    .footer {
+        padding: 10px 5vw; /* Reduce overall padding */
+        gap: 15px; /* Reduce spacing */
+    }
+
+    .footer-content {
+        gap: 20px; /* Minimize gaps further */
+    }
+
+    .footer-content-left,
+    .footer-content-center,
+    .footer-content-right {
+        gap: 10px; /* Minimize gap between items */
+        width: 100%; /* Force content to fit within screen width */
+    }
+
+    .footer-social-icons img {
+        width: 20px; /* Minimize icon size */
+    }
+
+    .footer-content li {
+        font-size: 12px; /* Reduce text size */
+    }
+}
