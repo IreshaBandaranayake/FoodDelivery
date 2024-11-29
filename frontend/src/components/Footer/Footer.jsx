@@ -6,8 +6,8 @@ const Footer = () => {
     <div className='footer' id='footer'>
         <div className="footer-content">
             <div className="footer-content-left">
-                <img src={assets.logo} alt="" />
-                <p>Mealhub is a food delivery website. I'm developing this for my Full stack development project</p>
+                {/* <img src={assets.logo} alt="" /> */}
+                <p>MealHub is your trusted partner for delicious meals delivered straight to your doorstep. From fresh ingredients to exceptional service, we are committed to making every dining experience delightful. Order from a wide variety of cuisines, track your orders in real time, and enjoy exclusive deals every day. Thank you for choosing MealHub</p>
                 <div className="footer-social-icons">
                     <img src={assets.facebook_icon} alt="" />
                     <img src={assets.twitter_icon} alt="" />
@@ -27,7 +27,7 @@ const Footer = () => {
                 <h2>Get In Touch</h2>
                 <ul>
                     <li>+358442349874</li>
-                    <li>contact@mealhub.com</li>    
+                    <li>cont@mealhub.com</li>    
                 </ul>
             </div>
         </div>
