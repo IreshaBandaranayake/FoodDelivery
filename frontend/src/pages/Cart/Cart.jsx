@@ -73,7 +73,7 @@ const Cart = () => {
               <b>Total</b>
               <b>
                 
-                {getTotalCartAmount() === 0
+                €{getTotalCartAmount() === 0
                   ? "0.00"
                   : (getTotalCartAmount() + 2).toFixed(2)}
               </b>
