@@ -10,7 +10,7 @@ const MyOrders = () => {
     const [data,setData] = useState([]); 
 
     const fetchOrders = async () => {
-        const response = await axios.post(url+"api/orders/userorders",{},{headers:{token}});
+        const response = await axios.post(url+"/api/orders/userorders",{},{headers:{token}});
         setData(response.data.data);
         
     }
@@ -31,10 +31,10 @@ const MyOrders = () => {
                         <img src={assets.parcel_icon} alt="" />
                         <p>{order.items.map((item,index)=>{
                             if (index === order.items.length-1) {
-                                return item.name+"x"+item.quantity
+                                return item.name+"X"+item.quantity
                             }
                             else{
-                                return item.name+"x"+item.quantity+","
+                                return item.name+"X"+item.quantity+","
                             }
                         })}</p>
                         <p>€{order.amount}.00</p>
@@ -50,4 +50,4 @@ const MyOrders = () => {
   )
 }
 
-export default MyOrders
+export default MyOrders;

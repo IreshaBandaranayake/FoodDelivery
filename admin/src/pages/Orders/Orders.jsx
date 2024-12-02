@@ -12,7 +12,7 @@ const Orders = ({url}) => {
   const [orders,setOrders] = useState([]);
 
   const fetchAllOrders = async () => {
-     const response = await axios.get(url+"api/order/list");
+     const response = await axios.get(url+"/api/orders/list");
      if (response.data.success) {
       setOrders(response.data.data);
       console.log(response.data.data);
@@ -23,7 +23,7 @@ const Orders = ({url}) => {
   }
 
   const statusHandler = async (event,orderId) => {
-    const response = await axios.post(url+"/api/order/status",{
+    const response = await axios.post(url+"/api/orders/status",{
       orderId,
       status:event.target.value
     })
@@ -44,16 +44,14 @@ const Orders = ({url}) => {
           <div key={index} className="order-item">
               <img src={assets.parcel_icon} alt="" />
               <div>
-                <p className='order-item-food'>
-                  {order.items.map((item,index)=>{
-                    if (index===order.items.length-1) {
-                      return item.name + "x" + item.quantity
-                    }
-                    else {
-                      return item.name + "x" + item.quantity + ","
-                    }
-                  })}
-                </p>
+              <p className='order-item-food'>
+  {Array.isArray(order.items) ? order.items.map((item, index) => {
+    return `${item.name} x ${item.quantity}` + (index === order.items.length - 1 ? '' : ',');
+  }) : 'No items'}
+</p>
+
+<p>Items : {Array.isArray(order.items) ? order.items.length : 0}</p>
+
                 <p className="order-item-name">{order.address.firstName+""+order.address.lastName}</p>
                 <div className="order-item-address">
                   <p>{order.address.street+","}</p>
@@ -61,7 +59,7 @@ const Orders = ({url}) => {
                 </div>
                 <p className='order-item-phone'>{order.address.phone}</p>
               </div>
-              <p>Items : {order.item.length} </p>
+              <p>Items : {order.items.length} </p>
               <p>€{order.amount}</p>
               <select onChange={(event)=>statusHandler(event,order._id)} value={order.status}>
                 <option value="Food Processing">Food Processing</option>
