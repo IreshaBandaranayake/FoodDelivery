@@ -6,7 +6,7 @@ export const StoreContext = createContext(null)
 const StoreContextProvider = (props) => {
 
     const [cartItems,setCartItems] = useState({});
-    const url = "http://localhost:4000"
+    const url = "http://localhost:4000";
     const [token,setToken] = useState("");
     const [food_list,setFoodList] = useState([])
 
@@ -42,17 +42,17 @@ const StoreContextProvider = (props) => {
         return totalAmount;
     }
 
-    const fetchFoodList = async () => {
-        const response = await axios.get(url+"/api/food/list")
+    const fetchFoodList = async () => {  //ok
+        const response = await axios.get(url+"/api/food/list")  // ok
         setFoodList(response.data.data)
     }
-    
-    useEffect(()=>{
-        
+
+//ok this useEffect    
+    useEffect(()=>{       
         async function loadData() {
-            await fetchFoodList()
+            await fetchFoodList();
             if(localStorage.getItem("token")){
-                setToken(localStorage.getItem("token"))
+                setToken(localStorage.getItem("token"));
             }
         }
         loadData();
