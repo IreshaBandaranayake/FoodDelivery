@@ -83,13 +83,13 @@ const Cart = () => {
         </div>
 
         <div className="cart-promocode">
-          <div>
+          {/* <div>
             <p>If you have a promocode, Enter it here</p>
             <div className="cart-promocode-input">
               <input type="text" placeholder="promo code" />
               <button>Submit</button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
