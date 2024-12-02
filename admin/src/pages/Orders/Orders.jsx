@@ -45,10 +45,15 @@ const Orders = ({url}) => {
               <img src={assets.parcel_icon} alt="" />
               <div>
               <p className='order-item-food'>
-  {Array.isArray(order.items) ? order.items.map((item, index) => {
-    return `${item.name} x ${item.quantity}` + (index === order.items.length - 1 ? '' : ',');
-  }) : 'No items'}
-</p>
+                  {order.items.map((item,index)=>{
+                    if (index===order.items.length-1) {
+                      return item.name + "x" + item.quantity
+                    }
+                    else {
+                      return item.name + "x" + item.quantity + ","
+                    }
+                  })}
+                </p>
 
 <p>Items : {Array.isArray(order.items) ? order.items.length : 0}</p>
 
